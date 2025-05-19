@@ -3,7 +3,7 @@
 
 
 Hello () {
-    echo "Hello world! $1 $2"
+    echo "Hello wor $1 $2"
 }
 
 Hello Anil
