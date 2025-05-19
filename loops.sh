@@ -1,6 +1,6 @@
 #!bin/bash
 
-for var in 0 1 2 3 4
+for i in 0 1 2 3 4
 do 
-echo var
+echo i
 done
