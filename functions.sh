@@ -30,7 +30,7 @@ read num2
 
 Addition () {
     total=$(($num1+$num2))
-    echo "$total"
+    echo "sum of two number :: $total"
 }
 
 Addition
