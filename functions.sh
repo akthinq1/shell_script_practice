@@ -19,3 +19,19 @@ print_date () {
 echo "print return $ret"
 
 print_date
+
+echo "enter input 1 :: "
+read num1
+
+echo "enter input 2 :: "
+read num2
+# num1=$2 # external input
+# num2=$3
+
+Addition () {
+    total=$(($num1+$num2))
+    echo "$total"
+}
+
+Addition
+
