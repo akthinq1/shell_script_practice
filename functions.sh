@@ -8,3 +8,7 @@ Hello () {
 }
 
 Hello Anil
+
+ret=!?
+
+echo "print return $ret"
