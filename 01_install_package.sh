@@ -25,7 +25,7 @@ validate(){
     fi
 }
 
-echo "enter packege name"
+echo -e "\e[1m enter packege name \e[0m"
 
 read module
 
