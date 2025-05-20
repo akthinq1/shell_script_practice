@@ -5,7 +5,7 @@
 
 check_user=$(id -u)
 
-if [$check_user -ne 0]
+if [ $check_user -ne 0 ]
 then
     echo "error:: pleae run the cmd with root access"
     exit 1 #status for failue # exit status other than 0 upto 127
