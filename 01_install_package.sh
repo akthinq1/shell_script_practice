@@ -2,6 +2,7 @@
 
 # check super/root user or not
 #hint -> if root user "id -u == 0"
+install_pack
 
 check_user=$(id -u)
 
@@ -29,7 +30,10 @@ echo -e "`\e[1m`\e[32m enter packege name \e[0m"
 
 read module
 
-dnf list installed $module
+#create installing function
+
+install_pack () {
+    dnf list installed $module
 if [ $? -ne 0 ]
 then
     echo "$module is not installed... installing now"
@@ -40,4 +44,6 @@ then
 else
     echo "$module is already installed.... Nothing to do"
 fi
+}
+
 
