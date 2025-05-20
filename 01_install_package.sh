@@ -2,7 +2,7 @@
 
 # check super/root user or not
 #hint -> if root user "id -u == 0"
-install_pack
+
 
 check_user=$(id -u)
 
@@ -46,4 +46,4 @@ else
 fi
 }
 
-
+install_pack
