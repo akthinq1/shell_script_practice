@@ -16,7 +16,7 @@ fi
 #create a validate function for success or failure the cmd
 
 validate(){
-    if [ $1 -eq 0]
+    if [ $1 -eq 0 ]
     then
         echo "Installing the $2 is ... success"
     else
