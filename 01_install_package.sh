@@ -25,15 +25,19 @@ validate(){
     fi
 }
 
-dnf list installed nginx
+echo "enter packege name"
+
+read module
+
+dnf list installed $module
 if [ $? -ne 0 ]
 then
-    echo "nginx is not installed... installing now"
+    echo "$module is not installed... installing now"
 
-    dnf install nginx -y
+    dnf install $module -y
     #validate installed or not
     validate $? "nginx"
 else
-    echo "nginx is already installed.... Nothing to do"
+    echo "$module is already installed.... Nothing to do"
 fi
 
