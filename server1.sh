@@ -2,7 +2,9 @@
 
 source ./server2.sh
 
-source /.server3.sh
+source ./server3.sh
+
+./server4.sh
 
 # ./server2.sh
 echo "i am server 1"
