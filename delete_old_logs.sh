@@ -13,7 +13,7 @@ SCRIPT_NAME=$(echo $0 | cut -d "." -f1)
 LOG_FILE="$LOGs_FOLDER/$SCRIPT_NAME.log"
 mkdir -p $LOGS_FOLDER
 
-if [$USER_ID -ne 0]
+if [ $USER_ID -ne 0 ]
 then
     echo -e "$RED ERROR:: run the script with root access $RESET" | tee -a $LOG_FILE
     exit 1 #exit status for error
