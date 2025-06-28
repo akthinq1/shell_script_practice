@@ -6,8 +6,7 @@ GREEN="e\[32m"
 YEELOW="e\[33m"
 RESET="e\[0m"
 
-mkdir -p $LOGS_FOLDER
-SOURCE_DIRECTORY=/home/ec2-user/app-logs
+SOURCE_DIRECTORY="/home/ec2-user/app-logs"
 LOGS_FOLDER="var/log/shellscript-logs"
 SCRIPT_NAME=$(echo $0 | cut -d "." -f1)
 LOG_FILE="$LOGs_FOLDER/$SCRIPT_NAME.log"
@@ -30,6 +29,7 @@ VALIDATE(){
         exit 1
     fi
 }
+
 FILES_TO_DELETE=$(find $SOURCE_DIRECTORY -name "*.log" -mtime +14)
 
 while IFS=read -r filepath
