@@ -36,6 +36,6 @@ while IFS= read -r filepath
 do
     echo "deleting older files => $filepath"
     rm -rf $filepath
-done <<< $filepath #to loop the string output we provide a input to filepath
+done <<< $FILES_TO_DELETE #to loop the string output we provide a input to filepath
 
 echo "script executed successfully"
