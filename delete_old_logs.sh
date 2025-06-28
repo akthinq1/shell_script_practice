@@ -6,7 +6,7 @@ GREEN="\e[32m"
 YEELOW="\e[33m"
 RESET="\e[0m"
 
-SOURCE_DIRECTORY="/home/ec2-user/app-logs"
+SOURCE_DIRECTORY=/home/ec2-user/app-logs
 LOGS_FOLDER="var/log/shellscript-logs"
 SCRIPT_NAME=$(echo $0 | cut -d "." -f1)
 LOG_FILE="$LOGs_FOLDER/$SCRIPT_NAME.log"
