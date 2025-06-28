@@ -29,7 +29,7 @@ VALIDATE(){
         echo -e "$2 is... $RED failure $RESET" | tee -a $LOG_FILE
         exit 1
     fi
-
+}
 FILES_TO_DELETE=$(find $SOURCE_DIRECTORY -name "*.log" -mtime +14)
 
 while IFS=read -r filepath
