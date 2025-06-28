@@ -1,10 +1,10 @@
 #!/bin/bash
 
 USER_ID=$(id -u)
-RED="e\[31m"
-GREEN="e\[32m"
-YEELOW="e\[33m"
-RESET="e\[0m"
+RED="\e[31m"
+GREEN="\e[32m"
+YEELOW="\e[33m"
+RESET="\e[0m"
 
 SOURCE_DIRECTORY="/home/ec2-user/app-logs"
 LOGS_FOLDER="var/log/shellscript-logs"
@@ -32,7 +32,7 @@ VALIDATE(){
 
 FILES_TO_DELETE=$(find $SOURCE_DIRECTORY -name "*.log" -mtime +14)
 
-while IFS=read -r filepath
+while IFS = read -r filepath
 do
     echo "deleting older files => $filepath"
     rm -rf $filepath
