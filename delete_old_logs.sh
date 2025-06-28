@@ -32,7 +32,7 @@ VALIDATE(){
 
 FILES_TO_DELETE=$(find $SOURCE_DIRECTORY -name "*.log" -mtime +14)
 
-while IFS = read -r filepath
+while IFS= read -r filepath
 do
     echo "deleting older files => $filepath"
     rm -rf $filepath
