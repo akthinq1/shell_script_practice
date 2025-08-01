@@ -65,9 +65,9 @@ fi
 
 # validate source dir and desti dir
 
-if [ ! -d $SOURCE_DIRECTORY ]
+if [ ! -d $SOURCE_DIR ]
 then
-    echo "source directory $SOURE_DIRECTORY not available... please check"
+    echo "source directory $SOURE_DIR not available... please check"
     exit 1
 fi
 
