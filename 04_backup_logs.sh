@@ -82,7 +82,7 @@ fi
 FILE=$(find $SOURCE_DIR -name "*.log" -mtime $DAYS)
 echo $FILE
 
-if [ ! -z $FILE ]
+if [ ! -z "$FILE" ]
 then 
     echo "no log files"
 else
