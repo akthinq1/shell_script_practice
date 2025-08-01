@@ -80,6 +80,7 @@ then
 fi
 
 FILE=$(find $SOURCE_DIR -name "*.log" -mtime $DAYS)
+echo $FILE
 
 if [ ! -z $FILE ]
 then 
