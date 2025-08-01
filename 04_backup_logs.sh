@@ -19,7 +19,7 @@ B="\e[34m"
 N="\e[0m"
 
 check_root () {
-    if [$USER != 0 ]
+    if [ $USER != 0 ]
     then 
         echo "error: run with root user"
         exit 1
