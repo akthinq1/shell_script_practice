@@ -8,6 +8,8 @@
 # find logs
 # zip logs
 # delete logs
+# date +%Y-%b-%d::%H-%M
+
 
 SOURCE_DIR=$1
 DEST_DIR=$2
@@ -28,10 +30,10 @@ mkdir -p $LOGS_FOLDER
 check_root () {
     if [ $USER != 0 ]
     then 
-        echo "error: run with root user"
+        echo "error: run with root user" | tee -a $LOG_FILE
         exit 1
     else
-        echo "script executing"
+        echo "script executing" | tee -a $LOG_FILE
         echo
     fi
 }
@@ -39,40 +41,49 @@ check_root () {
 VALIDATE () {
     if [ $1 == 0 ]
     then 
-        echo "$2 is successfull"
+        echo "$2 is successfull" | tee -a $LOG_FILE
         echo
     else
-        echo "$2 is fail"
+        echo "$2 is fail" | tee -a $LOG_FILE
         echo
     fi
 }
 
 input () {
-    echo "enter inputs while excecuting script"
+    echo "enter inputs while excecuting script" | tee -a $LOG_FILE
     echo
-    echo "ex: sudo sh scriptname source dest days"
+    echo "ex: sudo sh scriptname source dest days" | tee -a $LOG_FILE
     exit 1
 }
 
 # validate root user
-check_root
+check_root | tee -a $LOG_FILE
 
 # validate number of arguments
 if [ $# -lt 2 ]
 then
-    input
+    input | tee -a $LOG_FILE
 fi
 
 # validate source dir and desti dir
 
 if [ ! -d $SOURCE_DIR ]
 then
-    echo "source directory $SOURE_DIR not available... please check"
+    echo "source directory $SOURCE_DIR not available... please check" | tee -a $LOG_FILE
     exit 1
 fi
 
 if [ ! -d $DEST_DIR ]
 then
-    echo "desti directory $DEST_DIR not available... please check"
+    echo "desti directory $DEST_DIR not available... please check" | tee -a $LOG_FILE
     exit 1
+fi
+
+FILE=$(find $SOURCE_DIR -name "*.log" -mtime $DAYS)
+
+if [ ! -z $FILE ]
+then 
+    echo "no log files"
+else
+    echo "working on log files"
 fi
