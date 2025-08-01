@@ -43,6 +43,10 @@ input () {
     exit 1
 }
 
+# validate root user
+check_root
+
+# validate number of arguments
 if [ $# -lt 2 ]
 then
     input
