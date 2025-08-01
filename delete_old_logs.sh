@@ -39,3 +39,26 @@ do
 done <<< $FILES_TO_DELETE #to loop the string output we provide a input to filepath
 
 echo "script executed successfully"
+
+# text="apple,banana,cherry"
+# IFS=',' read -r fruit1 fruit2 fruit3 <<< "$text"
+# echo "$fruit1 | $fruit2 | $fruit3"
+
+# apple | banana | cherry
+
+
+# text="apple banana cherry"
+# for item in $text
+# do
+#     echo "$item"
+# done
+
+# apple
+# banana
+# cherry
+
+# while IFS= read -r filepath
+# do
+#     echo "Deleting: $filepath"
+#     rm -rf "$filepath"
+# done <<< "$FILES_TO_DELETE"
