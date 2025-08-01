@@ -84,7 +84,8 @@ echo $FILE
 
 if [ ! -z "$FILE" ]
 then 
-    echo "no log files"
-else
     echo "working on log files"
+else
+    
+    echo "no log files"
 fi
